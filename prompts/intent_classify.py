@@ -2,12 +2,11 @@ import json
 import re
 from utils.openrouter import call_openrouter_llm
 
-def classify_intent_and_extract_params(user_input):
-
+def classify_intent(user_input):
 
     system_prompt = """
-    You are an intent classification system that analyzes user input and maps it to the appropriate function.
-    You should return the function name and arguments that best match the user's intent.
+    You are an intent classification agent. Your sole responsibility is to identify which function the user wants to call.
+    
     AVAILABLE FUNCTIONS:
     1. book_table(date, time, restaurant_location, number_of_people)
     - Use when user wants to make a reservation or book a table
@@ -15,7 +14,7 @@ def classify_intent_and_extract_params(user_input):
     2. get_table_status(table_id, restaurant_location)
     - Use when user wants to check status of a specific table or reservation
     
-    3. get_menu_details()
+    3. get_menu_details(restaurant_location)
     - Use when user asks about menu items, dishes, prices, or what's available
 
     RESPONSE FORMAT:
@@ -29,9 +28,10 @@ def classify_intent_and_extract_params(user_input):
     }
 
     RULES:
+    - Focus ONLY on identifying the function the user wants
+    - Extract any parameters that are explicitly mentioned in the user input
     - If no function matches, set "function": null and "arguments": {}
-    - Extract all available parameters from user input, even if incomplete
-    - For missing required parameters, set their value to null
+    - For parameters not mentioned, set their value to null
     - Accept flexible date/time formats (convert to strings as-is)
     - Handle ambiguous queries by selecting the most likely function
     - Treat synonyms appropriately (e.g., "reserve" = book_table, "check reservation" = get_table_status)
@@ -44,13 +44,13 @@ def classify_intent_and_extract_params(user_input):
     Output: {"function": "get_table_status", "arguments": {"table_id": "12", "restaurant_location": null}}
 
     Input: "Show me your menu"
-    Output: {"function": "get_menu_details", "arguments": {}}
+    Output: {"function": "get_menu_details", "arguments": {"restaurant_location": null}}
 
     Input: "What's the weather like?"
     Output: {"function": null, "arguments": {}}
     """
-
-    user_prompt = f"User input: {user_input}\n\nClassify the intent and extract parameters. Respond with JSON only:"
+    
+    user_prompt = f"User input: {user_input}\n\nClassify the intent and extract any explicitly mentioned parameters. Respond with JSON only:"
 
     llm_response = call_openrouter_llm(
         user_prompt=user_prompt,
@@ -102,4 +102,4 @@ def classify_intent_and_extract_params(user_input):
 
 if __name__ == "__main__":
     user_input = "Make a reservation for 2 people on 18th December at 7:00 PM"
-    print(classify_intent_and_extract_params(user_input))
+    print(classify_intent(user_input))
