@@ -11,7 +11,6 @@ async def root():
 @app.post("/webhook")
 async def webhook(request: Request):
     payload = await request.json()
-    # print(payload)  
     try:
         send_message(payload)
     except Exception as e:

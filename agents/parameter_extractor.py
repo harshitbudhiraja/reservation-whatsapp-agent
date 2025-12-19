@@ -11,9 +11,8 @@ def extract_parameters(user_input, function_name, missing_params, collected_para
     ALREADY COLLECTED: {collected_params or {}}
     
     AVAILABLE FUNCTIONS AND THEIR PARAMETERS:
-    1. book_table(date, time, restaurant_location, number_of_people)
-    2. get_table_status(table_id, restaurant_location)
-    3. get_menu_details(restaurant_location)
+    1. book_table(date, meal_time, restaurant_location, number_of_people)
+    2. get_recommendation(user_lat, user_long)
     
     RESPONSE FORMAT:
     Return ONLY a valid JSON object with no additional text:
@@ -40,17 +39,18 @@ def extract_parameters(user_input, function_name, missing_params, collected_para
     Input: "tomorrow at 7pm"
     Output: {{"arguments": {{"date": "tomorrow", "time": "7pm"}}}}
     
-    Function: book_table, Missing: ["restaurant_location", "number_of_people"]
+    Function: book_table, Missing: ["date", "time", "restaurant_location", "number_of_people"]
     Input: "downtown for 4 people"
     Output: {{"arguments": {{"restaurant_location": "downtown", "number_of_people": "4"}}}}
     
-    Function: get_table_status, Missing: ["table_id", "restaurant_location"]
-    Input: "table 12"
-    Output: {{"arguments": {{"table_id": "12"}}}}
+    Function: get_recommendation, Missing: ["user_lat", "user_long"]
+    Input: "I am in Connaught Place, can you recommend some nearby venues?"
+    Output: {{"arguments": {{"user_lat": "28.6315", "user_long": "77.2167"}}}}
     
-    Function: get_table_status, Missing: ["restaurant_location"]
-    Input: "New Delhi location"
-    Output: {{"arguments": {{"restaurant_location": "New Delhi"}}}}
+    Function: get_recommendation, Missing: ["user_long"]
+    Input: "I am in Connaught Place, can you recommend some nearby venues?"
+    Output: {{"arguments": {{"user_lat": "28.6315", "user_long": "77.2167"}}}}
+    
     """
 
     user_prompt = f"User input: {user_input}\n\nExtract parameter values from the user input. Respond with JSON only:"

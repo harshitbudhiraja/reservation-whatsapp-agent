@@ -11,11 +11,8 @@ def classify_intent(user_input):
     1. book_table(date, time, restaurant_location, number_of_people)
     - Use when user wants to make a reservation or book a table
     
-    2. get_table_status(table_id, restaurant_location)
-    - Use when user wants to check status of a specific table or reservation
-    
-    3. get_menu_details(restaurant_location)
-    - Use when user asks about menu items, dishes, prices, or what's available
+    2. get_recommendation(user_lat, user_long)
+    - Use when user wants to get recommendations for nearby venues
 
     RESPONSE FORMAT:
     Return ONLY a valid JSON object with no additional text:
@@ -30,24 +27,17 @@ def classify_intent(user_input):
     RULES:
     - Focus ONLY on identifying the function the user wants
     - Extract any parameters that are explicitly mentioned in the user input
-    - If no function matches, set "function": null and "arguments": {}
     - For parameters not mentioned, set their value to null
     - Accept flexible date/time formats (convert to strings as-is)
     - Handle ambiguous queries by selecting the most likely function
-    - Treat synonyms appropriately (e.g., "reserve" = book_table, "check reservation" = get_table_status)
+    - Be soft on the intent classification and don't be too strict.
 
     EXAMPLES:
     Input: "Book a table for 4 tomorrow at 7pm at downtown location"
     Output: {"function": "book_table", "arguments": {"date": "tomorrow", "time": "7pm", "restaurant_location": "downtown", "number_of_people": "4"}}
 
-    Input: "What's the status of table 12?"
-    Output: {"function": "get_table_status", "arguments": {"table_id": "12", "restaurant_location": null}}
-
-    Input: "Show me your menu"
-    Output: {"function": "get_menu_details", "arguments": {"restaurant_location": null}}
-
-    Input: "What's the weather like?"
-    Output: {"function": null, "arguments": {}}
+    Input: "I am in Connaught Place, can you recommend some nearby venues?"
+    Output: {"function": "get_recommendation", "arguments": {"user_lat": "28.6315", "user_long": "77.2167"}}
     """
     
     user_prompt = f"User input: {user_input}\n\nClassify the intent and extract any explicitly mentioned parameters. Respond with JSON only:"
@@ -60,9 +50,8 @@ def classify_intent(user_input):
         temperature=0.1,
         top_p=0.9
     )
-    print("llm_response", llm_response)
+
     if llm_response:
-        print("llm_response", llm_response)
 
         try:
             parsed_result = json.loads(llm_response)
@@ -101,5 +90,5 @@ def classify_intent(user_input):
 
 
 if __name__ == "__main__":
-    user_input = "Make a reservation for 2 people on 18th December at 7:00 PM"
+    user_input = "make a reservasation forads me , tomorrow at 4pm in Hauz khas, 4 people will be dining "
     print(classify_intent(user_input))

@@ -36,7 +36,7 @@ def call_openrouter_llm(user_prompt, system_prompt, model, max_tokens=1000, temp
         
         if not completion.choices or not completion.choices[0].message.content:
             print("Response is empty or no choices returned")
-            print(f"Completion object: {completion.model_dump()}")
+            # print(f"Completion object: {completion.model_dump()}")
             with open('error_logs.json', 'a') as error_file:
                 import json
                 json.dump(completion.model_dump(), error_file, indent=2)

@@ -2,7 +2,7 @@ curl -X 'POST' \
   /api/messages/text \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer 1wHv05p1QLEHXM4ne6g7slfertlVsuAu' \
+  -H 'Authorization: Bearer {TOKEN}' \
   -d '{
   "to": "917838418898",
   "body": "Hello, this message was sent via API!"

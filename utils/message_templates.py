@@ -2,22 +2,18 @@ MESSAGE_TEMPLATES = {
     "book_table": {
         "date": "What date would you like to book the table for?",
         "time": "What time would you like to book the table?",
-        "restaurant_location": "Which location would you like to book at?",
+        "restaurant_location": "Which location would you like to book at?\n\nWe have 20 centres, all across Delhi NCR.",
         "number_of_people": "How many people will be dining?"
     },
-    "get_table_status": {
-        "table_id": "Could you please provide your table ID?",
-        "restaurant_location": "Which restaurant location should I check?"
-    },
-    "get_menu_details": {
-        "restaurant_location": "Which location's menu would you like to see?"
+    "get_recommendation": {
+        "user_lat": "To provide you with the best recommendations, please share your WhatsApp location.",
+        "user_long": "To provide you with the best recommendations, please share your WhatsApp location."
     }
 }
 
 FUNCTION_REQUIRED_PARAMS = {
     "book_table": ["date", "time", "restaurant_location", "number_of_people"],
-    "get_table_status": ["table_id", "restaurant_location"],
-    "get_menu_details": ["restaurant_location"]
+    "get_recommendation": ["user_lat", "user_long"]
 }
 
 def get_question_for_param(function_name, param_name):

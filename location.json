@@ -1,0 +1,203 @@
+{
+  "1": {
+    "name": "Connaught Place",
+    "address": "Connaught Place, New Delhi",
+    "id": 1,
+    "lat": 28.6315,
+    "long": 77.2167,
+    "total_capacity": 25
+  },
+  "2": {
+    "name": "Khan Market",
+    "address": "Khan Market, New Delhi",
+    "id": 2,
+    "lat": 28.6006,
+    "long": 77.2270,
+    "total_capacity": 15
+  },
+  "3": {
+    "name": "Cyber City Gurugram",
+    "address": "Cyber City, Gurugram",
+    "id": 3,
+    "lat": 28.4946,
+    "long": 77.0885,
+    "total_capacity": 50
+  },
+  "4": {
+    "name": "Hauz Khas",
+    "address": "Hauz Khas, New Delhi",
+    "id": 4,
+    "lat": 28.5535,
+    "long": 77.1926,
+    "total_capacity": 20
+  },
+  "5": {
+    "name": "Noida Sector 18",
+    "address": "Noida Sector 18, Noida",
+    "id": 5,
+    "lat": 28.5708,
+    "long": 77.3260,
+    "total_capacity": 30
+  },
+  "6": {
+    "name": "Saket Select Citywalk",
+    "address": "Saket Select Citywalk, New Delhi",
+    "id": 6,
+    "lat": 28.5287,
+    "long": 77.2186,
+    "total_capacity": 22
+  },
+  "7": {
+    "name": "Rajouri Garden",
+    "address": "Rajouri Garden, New Delhi",
+    "id": 7,
+    "lat": 28.6508,
+    "long": 77.1227,
+    "total_capacity": 18
+  },
+  "8": {
+    "name": "DLF Mall of India, Noida",
+    "address": "DLF Mall of India, Noida",
+    "id": 8,
+    "lat": 28.5676,
+    "long": 77.3210,
+    "total_capacity": 36
+  },
+  "9": {
+    "name": "Ambience Mall, Gurgaon",
+    "address": "Ambience Mall, Gurgaon",
+    "id": 9,
+    "lat": 28.5043,
+    "long": 77.0956,
+    "total_capacity": 32
+  },
+  "10": {
+    "name": "Vasant Kunj",
+    "address": "Vasant Kunj, New Delhi",
+    "id": 10,
+    "lat": 28.5204,
+    "long": 77.1638,
+    "total_capacity": 20
+  },
+  "11": {
+    "name": "Janakpuri",
+    "address": "Janakpuri, New Delhi",
+    "id": 11,
+    "lat": 28.6216,
+    "long": 77.0877,
+    "total_capacity": 18
+  },
+  "12": {
+    "name": "Sohna Road, Gurgaon",
+    "address": "Sohna Road, Gurgaon",
+    "id": 12,
+    "lat": 28.4211,
+    "long": 77.0425,
+    "total_capacity": 28
+  },
+  "13": {
+    "name": "Lajpat Nagar",
+    "address": "Lajpat Nagar, New Delhi",
+    "id": 13,
+    "lat": 28.5744,
+    "long": 77.2430,
+    "total_capacity": 22
+  },
+  "14": {
+    "name": "South Extension",
+    "address": "South Extension, New Delhi",
+    "id": 14,
+    "lat": 28.5800,
+    "long": 77.2195,
+    "total_capacity": 16
+  },
+  "15": {
+    "name": "Dwarka Sector 12",
+    "address": "Dwarka Sector 12, New Delhi",
+    "id": 15,
+    "lat": 28.5898,
+    "long": 77.0378,
+    "total_capacity": 20
+  },
+  "16": {
+    "name": "Golf Course Road, Gurugram",
+    "address": "Golf Course Road, Gurugram",
+    "id": 16,
+    "lat": 28.4459,
+    "long": 77.1049,
+    "total_capacity": 25
+  },
+  "17": {
+    "name": "Preet Vihar",
+    "address": "Preet Vihar, New Delhi",
+    "id": 17,
+    "lat": 28.6426,
+    "long": 77.2968,
+    "total_capacity": 15
+  },
+  "18": {
+    "name": "Pitampura",
+    "address": "Pitampura, New Delhi",
+    "id": 18,
+    "lat": 28.6981,
+    "long": 77.1357,
+    "total_capacity": 17
+  },
+  "19": {
+    "name": "Karol Bagh",
+    "address": "Karol Bagh, New Delhi",
+    "id": 19,
+    "lat": 28.6516,
+    "long": 77.1908,
+    "total_capacity": 18
+  },
+  "20": {
+    "name": "Yamuna Vihar",
+    "address": "Yamuna Vihar, New Delhi",
+    "id": 20,
+    "lat": 28.7119,
+    "long": 77.2767,
+    "total_capacity": 12
+  },
+  "21": {
+    "name": "Nehru Place",
+    "address": "Nehru Place, New Delhi",
+    "id": 21,
+    "lat": 28.5484,
+    "long": 77.2510,
+    "total_capacity": 21
+  },
+  "22": {
+    "name": "Rohini Sector 10",
+    "address": "Rohini Sector 10, New Delhi",
+    "id": 22,
+    "lat": 28.7355,
+    "long": 77.1220,
+    "total_capacity": 22
+  },
+  "23": {
+    "name": "Indirapuram",
+    "address": "Indirapuram, Ghaziabad",
+    "id": 23,
+    "lat": 28.6463,
+    "long": 77.3714,
+    "total_capacity": 27
+  },
+  "24": {
+    "name": "Greater Kailash",
+    "address": "Greater Kailash, New Delhi",
+    "id": 24,
+    "lat": 28.5418,
+    "long": 77.2340,
+    "total_capacity": 19
+  },
+  "25": {
+    "name": "Vikaspuri",
+    "address": "Vikaspuri, New Delhi",
+    "id": 25,
+    "lat": 28.6407,
+    "long": 77.0708,
+    "total_capacity": 13
+  }
+}
+

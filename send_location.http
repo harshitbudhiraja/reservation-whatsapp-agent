@@ -1,0 +1,11 @@
+curl -X POST "https://gate.whapi.cloud/messages/location" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "to": "917838418898",
+    "latitude": 28.5445,
+    "longitude": 77.1926,
+    "name": "Good Foods",
+    "address": "Connaught Place, New Delhi"
+  }'
